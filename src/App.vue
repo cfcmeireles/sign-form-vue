@@ -66,6 +66,8 @@ body {
   right: 60px;
 }
 
+/* Mobile design */
+
 @media only screen and (max-width: 350px) {
   body {
     background-image: url("/src/assets/bg-intro-mobile.png");

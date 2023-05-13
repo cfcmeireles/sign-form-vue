@@ -185,7 +185,7 @@ export default {
           this.input[field].classError = true;
         }
       });
-      if (this.isValidEmail === false && this.input.email.value) {
+      if (!this.isValidEmail && this.input.email.value) {
         this.input.email.classErrorInvalid = true;
         this.input.email.classError = true;
         this.input.email.invalidIcon = true;
