@@ -168,9 +168,7 @@ export default {
   },
   computed: {
     isValidEmail() {
-      return this.input.email.emailRegex.test(this.input.email.value)
-        ? true
-        : false;
+      return this.input.email.emailRegex.test(this.input.email.value);
     },
   },
   methods: {
