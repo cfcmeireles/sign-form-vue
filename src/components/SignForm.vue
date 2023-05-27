@@ -18,12 +18,12 @@
         class="invalid-icon"
         data-for="fname"
         alt="error icon"
-        v-show="input.firstName.invalidIcon"
+        v-if="input.firstName.invalidIcon"
       />
       <p
         class="invalid-p"
         data-for="fname"
-        v-show="input.firstName.invalidParagraph"
+        v-if="input.firstName.invalidParagraph"
       >
         {{ input.firstName.text }}
       </p>
@@ -42,12 +42,12 @@
         class="invalid-icon"
         data-for="lname"
         alt="error icon"
-        v-show="input.lastName.invalidIcon"
+        v-if="input.lastName.invalidIcon"
       />
       <p
         class="invalid-p"
         data-for="lname"
-        v-show="input.lastName.invalidParagraph"
+        v-if="input.lastName.invalidParagraph"
       >
         {{ input.lastName.text }}
       </p>
@@ -66,7 +66,7 @@
         class="invalid-icon-email"
         data-for="email"
         alt="error icon"
-        v-show="input.email.invalidIcon"
+        v-if="input.email.invalidIcon"
       />
       <p
         class="invalid-p-email"
@@ -79,8 +79,7 @@
       <p
         class="invalid-p-email"
         data-for="email"
-        v-show="input.email.invalidParagraph"
-        v-else
+        v-else-if="input.email.invalidParagraph"
       >
         {{ input.email.text }}
       </p>
@@ -100,12 +99,12 @@
         class="invalid-icon"
         data-for="password"
         alt="error icon"
-        v-show="input.password.invalidIcon"
+        v-if="input.password.invalidIcon"
       />
       <p
         class="invalid-p"
         data-for="password"
-        v-show="input.password.invalidParagraph"
+        v-if="input.password.invalidParagraph"
       >
         {{ input.password.text }}
       </p>
