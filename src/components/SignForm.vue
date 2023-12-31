@@ -163,6 +163,7 @@ export default {
           classError: false,
         },
       },
+      originalPlaceholders: {},
     };
   },
   computed: {
@@ -176,10 +177,18 @@ export default {
 
       inputFields.forEach((field) => {
         if (!this.input[field].value) {
+          if (!this.originalPlaceholders[field]) {
+            this.originalPlaceholders[field] = this.input[field].placeholder;
+          }
           this.input[field].placeholder = "";
           this.input[field].invalidIcon = true;
           this.input[field].invalidParagraph = true;
           this.input[field].classError = true;
+        } else {
+          this.input[field].placeholder = this.originalPlaceholders[field];
+          this.input[field].invalidIcon = false;
+          this.input[field].invalidParagraph = false;
+          this.input[field].classError = false;
         }
       });
       if (!this.isValidEmail && this.input.email.value) {
